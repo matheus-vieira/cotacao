@@ -1,0 +1,15 @@
+.App-btn {
+    width: 90%;
+    text-align: left;
+    position:absolute;
+    bottom: 3%;
+    left: 5%;
+    right: 5%;
+    padding: 2em;
+    border: medium none;  
+    color: #800080;
+}
+
+.App-btn-icon {
+    float: right;
+}
