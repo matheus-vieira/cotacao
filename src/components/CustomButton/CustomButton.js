@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
 import './CustomButton.css';
 import { Icon } from 'react-icons-kit'
-import { longArrowRight } from 'react-icons-kit/fa/longArrowRight'
-import { Redirect } from 'react-router';
+import { longArrowRight } from 'react-icons-kit/fa/longArrowRight';
+import { withRouter } from 'react-router-dom';
 
 class CustomButton extends React.Component {
     constructor(props) {
         super(props);
         this.text = props.text || "Iniciar";
         this.route = props.route || "/";
-        this.state = {redirect: false };
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick() {
-        this.setState({redirect: true});
+        this.props.history.push(this.route);
     }
 
     render() {
-        if (this.state.redirect) 
-            return <Redirect push to={this.route} />;
-
         return (
             <button className="App-btn" onClick={this.handleClick}>
                 {this.text}
@@ -30,4 +26,4 @@ class CustomButton extends React.Component {
     }
 }
 
-export default CustomButton;
+export default withRouter(CustomButton);
