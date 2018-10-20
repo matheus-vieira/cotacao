@@ -1,18 +1,11 @@
-/**
- * 
-          <Icon icon={lineChart} />
-          <p>Cotação de seguros</p>
-          <small>Solução inovadora da líder de mercado</small>
- */
-
 import React, { Component } from 'react';
 
-import './App.css';
+import '../../App.css';
 
 import { Icon } from 'react-icons-kit'
 
 import {lineChart} from 'react-icons-kit/fa/lineChart'
-import {Button} from 'react-icons-kit/fa/longArrowRight'
+import Button from '../CustomButton/CustomButton'
 
 
 class App extends Component {
@@ -23,10 +16,7 @@ class App extends Component {
           <Icon icon={lineChart} />
           <p>Cotação de seguros</p>
           <small>Solução inovadora da líder de mercado</small>
-          <button className="App-btn">
-            Iniciar
-            <Icon className="App-btn-icon" size={16} icon={longArrowRight} />
-          </button>
+          <Button text="Iniciar" route="novaCotacao" />
         </header>
       </div>
     );
