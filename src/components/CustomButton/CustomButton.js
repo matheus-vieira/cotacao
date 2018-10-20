@@ -1,29 +1,42 @@
 import React, { Component } from 'react';
-import './CustomButton.css';
-import { Icon } from 'react-icons-kit'
-import { longArrowRight } from 'react-icons-kit/fa/longArrowRight';
 import { withRouter } from 'react-router-dom';
 
-class CustomButton extends React.Component {
+import PropTypes from 'prop-types';
+
+import './CustomButton.css';
+
+import { Icon } from 'react-icons-kit'
+import { longArrowRight } from 'react-icons-kit/fa/longArrowRight';
+
+class CustomButton extends Component {
     constructor(props) {
         super(props);
-        this.text = props.text || "Iniciar";
-        this.route = props.route || "/";
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick() {
-        this.props.history.push(this.route);
+        this.props.history.push(this.props.route);
     }
 
     render() {
+        const { text } = this.props;
         return (
             <button className="App-btn" onClick={this.handleClick}>
-                {this.text}
+                {text}
                 <Icon className="App-btn-icon" size={16} icon={longArrowRight} />
             </button>
         );
     }
 }
+
+CustomButton.propTypes = {
+    text: PropTypes.string,
+    route: PropTypes.string
+};
+
+CustomButton.defaultProps = {
+    text: 'Iniciar',
+    route: '/'
+};
 
 export default withRouter(CustomButton);

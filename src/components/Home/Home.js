@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import '../../App.css';
+import './Home.css';
 
 import { Icon } from 'react-icons-kit'
 

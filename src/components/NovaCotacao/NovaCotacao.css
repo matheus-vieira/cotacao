@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+}
+
+.NovaCotacao-header img {
+  border-radius: 50%;
+  width: 40%;
+  height: 40%;
+}
+
+.NovaCotacao-header {
+  color: white;
+  display: inline-grid;
+  grid-column: 1/4; /* grid-column-start / grid-column-end */
+  grid-row: 2/4; /* grid-row-start / grid-row-end */
+}
+
+.NovaCotacao-header > * {
+  flex: 1 100%;
+}
