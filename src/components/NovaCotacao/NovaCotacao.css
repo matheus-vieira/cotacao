@@ -7,6 +7,10 @@
   color: white;
 }
 
+.NovaCotacao-body-input {
+  background-color: #fff;
+}
+
 .NovaCotacao-header img {
   border-radius: 50%;
   width: 36px;
