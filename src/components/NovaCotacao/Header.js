@@ -21,12 +21,18 @@ class Home extends Component {
     render() {
         return (
             <header className="NovaCotacao-header">
+            <ul>
+              <li>
                 <Icon icon={lineChart} />
-                <p>Nova cotação</p>
-                <small>#{this.id()}</small>
+                <div>
+                    <p class="title">Nova cotação</p>
+                    <span class="description">#{this.id()}</span>
+                </div>
                 <img src="https://matheus-vieira.github.io/images/author.png" />
-            </header>
-    );
+              </li>
+            </ul>
+          </header>
+        );
     }
 }
 

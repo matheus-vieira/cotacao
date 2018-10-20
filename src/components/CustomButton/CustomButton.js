@@ -20,8 +20,10 @@ class CustomButton extends Component {
 
     render() {
         const { text } = this.props;
+        let cssClasses = 'App-btn';
+        if (this.btnClass) cssClasses = `${cssClasses} ${this.btnClass}`;
         return (
-            <button className="App-btn" onClick={this.handleClick}>
+            <button className={cssClasses} onClick={this.handleClick}>
                 {text}
                 <Icon className="App-btn-icon" size={16} icon={longArrowRight} />
             </button>
@@ -36,7 +38,8 @@ CustomButton.propTypes = {
 
 CustomButton.defaultProps = {
     text: 'Iniciar',
-    route: '/'
+    route: '/',
+    btnClass: ''
 };
 
 export default withRouter(CustomButton);

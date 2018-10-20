@@ -13,7 +13,7 @@ class Home extends Component {
     return (
       <div className="NovaCotacao">
         <Header />
-        <Button text="OK"  />
+        <Button text="OK" btnClass='novacotacao-btn'  />
       </div>
     );
   }
