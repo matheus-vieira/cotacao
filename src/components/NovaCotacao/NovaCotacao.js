@@ -1,22 +1,34 @@
 import React, { Component } from 'react';
 
-import '../../App.css';
-
-import { Icon } from 'react-icons-kit'
+import './NovaCotacao.css';
 
 import Header from './Header'
+import Body from './Body'
 import Button from '../CustomButton/CustomButton'
 
 
-class Home extends Component {
+class NovaCotacao extends Component {
+  constructor(props) {
+      super(props);
+      this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+      
+  }
+  componentDidMount() {
+      document.body.classList.add('NovaCotacao-body');
+  }
+
   render() {
     return (
       <div className="NovaCotacao">
         <Header />
-        <Button text="OK" btnClass='novacotacao-btn'  />
+        <Body onClick={this.onClick} />
+        <Button text="OK" btnClass='App-btn novacotacao-btn'  />
       </div>
     );
   }
 }
 
-export default Home;
+export default NovaCotacao;

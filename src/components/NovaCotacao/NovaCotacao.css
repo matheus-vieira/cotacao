@@ -1,3 +1,7 @@
+.NovaCotacao-body {
+  background-color: #e3e4e4;
+}
+
 .NovaCotacao-header {
   background-color: #800080;
   color: white;
@@ -30,10 +34,6 @@ li{
   align-items: center;
 }
 
-.fa{
-  text-align: center;
-  font-size: 25px;
-}
 
 .title{
   font-size: 18px;
