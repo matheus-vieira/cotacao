@@ -9,7 +9,7 @@ class CustomButton extends React.Component {
         super(props);
         this.text = props.text || "Iniciar";
         this.route = props.route || "/";
-        this.state = { redirect: false };
+        this.state = {redirect: false };
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -19,7 +19,7 @@ class CustomButton extends React.Component {
 
     render() {
         if (this.state.redirect) 
-            return <Redirect push to="{this.route}" />;
+            return <Redirect push to={this.route} />;
 
         return (
             <button className="App-btn" onClick={this.handleClick}>
