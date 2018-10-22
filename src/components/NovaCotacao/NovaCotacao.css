@@ -17,6 +17,37 @@
   height: 36px;
 }
 
+.NovaCotacao-icon-ok {
+  color: green;
+}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+.NovaCotacao-cnpj {
+  border: 0;
+  /* padding: 3px 0; */
+  font-size: xx-large;
+}
+
 ul{
   display: flex;
   justify-content: flex-start;

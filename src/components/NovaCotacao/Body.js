@@ -6,19 +6,32 @@ import './NovaCotacao.css';
 
 import { Icon } from 'react-icons-kit';
 import { lineChart } from 'react-icons-kit/fa/lineChart';
+import { checkCircleO } from 'react-icons-kit/fa/checkCircleO';
+import { timesCircleO } from 'react-icons-kit/fa/timesCircleO';
 
+import InputMask from 'react-input-mask';
+
+import isValidCnpj from '@brazilian-utils/is-valid-cnpj';
 
 class Body extends Component {
     constructor(props) {
         super(props);
-        this.state = { cnpj: '' }
+        this.state = {
+            cnpj: '',
+            iconState: timesCircleO,
+            icon: timesCircleO,
+            className: ''
+        };
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(e) {
-        this.state.cnpj = e.target.value;
-        console.log(this.state.cnpj);
+        if (!isValidCnpj(e.target.value)) return;
+
+        this.setState({ cnpj: e.target.value });
+        this.props.handleChange(this.state.cnpj);
     }
+
     render() {
         return (
             <div>
@@ -34,13 +47,19 @@ class Body extends Component {
                     <li>
                         <div></div>
                         <div>
-                            <p className="title">
+                            <p className="description">
                                 <small>CNPJ/Empresa</small>
                             </p>
-                            <input required="required"
-                                onChange={this.handleChange}
-                                pattern="^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$"
-                                value={this.state.cnpj} />
+
+                            <div className="input-container">
+                                <InputMask onChange={this.handleChange}
+                                    mask="99.999.999/9999-99"
+                                    maskChar=""
+                                    className="NovaCotacao-cnpj"
+                                    autoFocus="autofocus" />
+                                <Icon icon={this.props.iconState ? checkCircleO : timesCircleO}
+                                    className={(this.props.iconState ? 'NovaCotacao-icon-ok' : '') + ' icon'} />
+                            </div>
                         </div>
                     </li>
                 </ul>

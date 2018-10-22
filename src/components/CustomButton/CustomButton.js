@@ -15,13 +15,16 @@ class CustomButton extends Component {
     }
 
     handleClick() {
-        this.props.history.push(this.props.route);
+        if (this.props.enabled)
+            this.props.history.push(this.props.route);
     }
 
     render() {
         const { text } = this.props;
         return (
-            <button className={this.props.btnClass} onClick={this.handleClick}>
+            <button
+                className={this.props.btnClass}
+                onClick={e => this.handleClick()}>
                 {text}
                 <Icon className="App-btn-icon" size={16} icon={longArrowRight} />
             </button>
@@ -32,13 +35,17 @@ class CustomButton extends Component {
 CustomButton.propTypes = {
     text: PropTypes.string,
     route: PropTypes.string,
-    btnClass: PropTypes.string
+    btnClass: PropTypes.string,
+    clickHandler: PropTypes.func,
+    enabled: PropTypes.bool
 };
 
 CustomButton.defaultProps = {
     text: 'Iniciar',
     route: '/',
-    btnClass: 'App-btn'
+    btnClass: 'App-btn',
+    clickHandler: null,
+    enabled: true
 };
 
 export default withRouter(CustomButton);
