@@ -5,7 +5,13 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ## Execute 
 
-To excute this ou have to user [JSON Server](https://github.com/typicode/json-server)
+Before execute install the npm scripts:
+
+```bash
+npm i
+```
+
+To excute this you must have [JSON Server](https://github.com/typicode/json-server)
 
 Just run this command:
 
